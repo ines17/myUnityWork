@@ -1,0 +1,42 @@
+<div class="container">
+
+
+  <div class="row mt-5">
+    <div class="col-4 my-auto text-gray font-30">
+      <h1 class="titleRose text-center">Associations</h1>
+    </div>
+  </div>
+
+  <div class="row mt-2 mb-5" *ngIf="!loading">
+
+    <div class="col-10 m-auto my-3">
+      <div class="row border border-left ">
+        <div class="col-3">
+          <img *ngIf="!association?.logo" class="card-img-top" src="assets/img/associations/sante.png" alt="Card image cap">
+          <img *ngIf="association?.logo" class="card-img-top" src="{{association?.logo}}" alt="Card image cap">
+        </div>
+        <div class="col-6 m-auto">
+          <p class="text-justify h2">Raison sociale : {{association?.Name}}</p>
+          <p class="text-justify">Activity : {{association?.activity}}</p>
+          <p class="text-justify">Adresse : {{association?.adress}}</p>
+          <p class="text-justify">City : {{association?.region}}</p>
+          <p class="text-justify">Foundation Date : {{association?.fondationDate| date:'fullDate'}}</p>
+          <p class="text-justify">Subscriptions : {{association?.subscriptions.length}}</p>
+          <p class="text-justify">Events : {{association?.events.length}}</p>
+        </div>
+      </div>
+      <br/>
+    </div>
+
+  </div>
+
+  <div class="row mt-2 mb-5" *ngIf="loading">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6 m-auto">
+        Chargement des associations ...
+      </div>
+      <div class="col-3"></div>
+    </div>
+  </div>
+</div>

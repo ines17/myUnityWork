@@ -1,0 +1,89 @@
+<div class="container">
+
+
+  <div class="row mt-5">
+    <div class="col-4 my-auto text-gray font-30">
+      <h1 class="titleRose text-center">Add or update associations</h1>
+    </div>
+  </div>
+
+  <form #f="ngForm">
+    <div class="row mt-2 mb-5">
+
+      <div class="col-10 m-auto my-3">
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-setting__item">
+              <label class="form-setting__label">Name <sup>*</sup></label>
+              <div class="form-setting__input">
+                <input type="text" name="Name" placeholder="name" class="form-control" ngModel/>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-setting__item">
+              <label class="form-setting__label"><span>Adress</span></label>
+              <div class="form-setting__input">
+                <input type="text" name="adress" placeholder="adress" class="form-control" ngModel/>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-setting__item">
+              <label class="form-setting__label"><span>fondationDate</span></label>
+              <div class="form-setting__input">
+                <input type="date" name="fondationDate" placeholder="Fondation Date" class="form-control" ngModel/>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-setting__item">
+              <label class="form-setting__label"><span>Activity</span></label>
+              <div class="form-setting__input">
+                <select name="activity" placeholder="Activity" class="form-control" ngModel>
+                  <option value="">--Please choose type of activity--</option>
+                  <option value="Debate Conference">activity 1</option>
+                  <option value="Sport Event">activity 2</option>
+                  <option value="Show or Concert">activity 3</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-setting__item">
+              <label class="form-setting__label"><span>Region</span></label>
+              <div class="form-setting__input">
+                <select name="region" placeholder="Region" class="form-control" ngModel>
+                  <option value="">--Please choose region --</option>
+                  <option value="Debate Conference">Tunis</option>
+                  <option value="Sport Event">Manouba</option>
+                  <option value="Show or Concert">Ariana</option>
+                  <option value="Other">Ben Arous</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-setting__item">
+              <label class="form-setting__label"><span>Logo</span></label>
+              <div class="form-setting__input">
+                <input type="file" class="form-control" (change)="handleUpload($event)" id="customFile" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-10 m-auto my-3">
+        <button type="button" (click)="onSubmit(f.value)" class="btn btn-primary">Save</button>
+        <button type="button" [routerLink]="'/associations'" class="btn btn-default">Cancel</button>
+      </div>
+
+    </div>
+  </form>
+
+
+</div>

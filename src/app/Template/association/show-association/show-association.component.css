@@ -1,0 +1,33 @@
+.btn-round-purple{
+  background-color: white;
+  color: #8b8ab5;
+  /* width: 73%; */
+  border-radius: 5px;
+  font-size: 15px;
+  border: 2px solid #8b8ab5;
+}
+
+.link-purple{
+  color: #8b8ab5;
+  font-size: 20px;
+}
+.titleRose{
+  color: #e80175;
+}
+.round-input{
+  border-radius: 35px;
+  width: 90%;
+  height: 35px;
+}
+.text-gray{
+  color: #8b8ab5;
+
+  font-family: calibri;
+}
+.font-30{
+  font-size: 30px;
+}
+.card{
+  border-radius: 35px;
+  border-color: #dfdfdf;
+}

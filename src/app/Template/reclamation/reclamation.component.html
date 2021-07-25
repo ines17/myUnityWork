@@ -1,0 +1,139 @@
+<div class="container">
+  <div class="row my-3">
+    <div class="col-12 text-center">
+      <span class="h1 titleRose">Feedback</span>
+      <br>
+      <button class="btn-claim" (click)="showForm=!showForm">
+        <span *ngIf="!showForm">Add Feedback</span>
+        <span *ngIf="showForm">Close</span>
+      </button>
+    </div>
+  </div>
+  <!-- begin feedback Form -->
+  <div class="mx-auto" *ngIf="showForm">
+    <div class="row mx-auto">
+      <div class="col-6 mx-auto text-center">
+        <span class="h1 text-center pt-2">Note: {{ note }} / 5</span>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-6 mx-auto text-center">
+        <ul class="ratings text-center">
+
+          <li class="star" (click)="vote(1)"></li>
+          <li class="star" (click)="vote(2)"></li>
+          <li class="star" (click)="vote(3)"></li>
+          <li class="star" (click)="vote(4)"></li>
+          <li class="star" (click)="vote(5)"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 mx-auto my-3">
+        <form>
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" name="fullName" id="fullName" class="form-control input-round" placeholder="">
+
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" class="form-control input-round" placeholder="">
+
+          </div>
+          <div class="form-group">
+            <label for="association">Association</label>
+            <select name="association" id="association" class="form-control input-round" placeholder="" >
+           <option *ngFor="let association of associations" [ngValue]="association.id">{{association._name}}</option>
+            </select>
+
+          </div>
+          <div class="form-group">
+            <label for="message">Your message</label>
+            <textarea name="message" id="message" class="form-control input-round" placeholder="">
+</textarea>
+
+          </div>
+
+
+          <div class="text-center mx-auto">
+            <button class="btn btn-lg btn-block btn-claim" [disabled]="(note<=0)||(note>5)" type="submit">Send</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- end feedback Form -->
+  <div class="row">
+    <div class="col-10 mx-auto">
+      <!--   <table class="table table-striped table-inverse table-responsive">
+       <thead class="thead-inverse">
+         <tr>
+           <th>ID</th>
+           <th>User</th>
+           <th>Association</th>
+           <th>Note</th>
+           <th>Description</th>
+           <th>Likes</th>
+         </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let feedback of feedbackList">
+             <td scope="row">{{feedback.id}}</td>
+             <td>{{feedback.userId.firstname}} {{feedback.userId.lastname}}</td>
+             <td>{{feedback.association.Name}}</td>
+             <td>{{feedback.note}}</td>
+             <td>{{feedback.descriptionFeed}}</td>
+             <td>{{feedback.likes}}</td>
+
+           </tr>
+
+         </tbody>
+     </table> -->
+      <div *ngFor="let feedback of feedbackList" class="col-12 m-auto my-3">
+        <div class="row border border-left ">
+          <div class="col-3 text-center my-auto">
+            <img class="card-img-top rounded rounded-circle imgFeed mx-auto my-3" src="assets/img/user.jpg"
+              alt="Card image cap">
+            <h2 class="h2 text-center">{{feedback.userId.firstname}} {{feedback.userId.lastname}}</h2>
+          </div>
+          <div class="col-6 m-auto">
+            <p class="text-justify"><span class="h5">Association : </span>{{feedback.association.Name}}</p>
+            <p class="text-justify"><span class="h5">Note : </span>{{feedback.note}}
+
+            </p>
+            <ul class="ratings text-center">
+
+              <li class="starOne"[ngClass]="{'selected': feedback.note==5}"></li>
+              <li class="starOne"[ngClass]="{'selected': feedback.note==4}"></li>
+              <li class="starOne"[ngClass]="{'selected': feedback.note==3}"></li>
+              <li class="starOne" [ngClass]="{'selected': feedback.note==2}"></li>
+              <li class="starOne"[ngClass]="{'selected': feedback.note==1}"></li>
+            </ul>
+            <p class="text-justify"><span class="h5">Likes: </span>{{feedback.likes}}</p>
+            <ul class="ratings text-center">
+
+              <li class="like"[ngClass]="{'selectedLike': feedback.likes==10}"></li>
+              <li class="like"[ngClass]="{'selectedLike': feedback.likes==9}"></li>
+              <li class="like"[ngClass]="{'selectedLike': feedback.likes==8}"></li>
+              <li class="like" [ngClass]="{'selectedLike': feedback.likes==7}"></li>
+              <li class="like"[ngClass]="{'selectedLike': feedback.likes==6}"></li>
+              <li class="like"[ngClass]="{'selectedLike': feedback.likes==5}"></li>
+              <li class="like"[ngClass]="{'selectedLike': feedback.likes==4}"></li>
+              <li class="like"[ngClass]="{'selectedLike': feedback.likes==3}"></li>
+              <li class="like" [ngClass]="{'selectedLike': feedback.likes==2}"></li>
+              <li class="like"[ngClass]="{'selectedLike': feedback.likes==1}"></li>
+            </ul>
+            <p class="text-justify"><span class="h5">Description : </span>{{feedback.descriptionFeed}}</p>
+          </div>
+
+        </div>
+        <br />
+      </div>
+
+    </div>
+  </div>
+</div>

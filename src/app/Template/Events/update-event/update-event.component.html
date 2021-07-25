@@ -1,0 +1,65 @@
+<div class="page-content">
+  <div class="form-v9-content" style="background-image: url('../assets/img/form-v9.jpg')">
+    <form class="form-detail" #f="ngForm">
+      <h2>Update Event </h2>
+      <div class="form-row-total">
+        <div class="form-row">
+          <input type="text" name="titleEvent"  class="input-text" placeholder="Title Event" ngModel [(ngModel)]="titleEvent">
+        </div>
+        <div class="form-row">
+          <select name="typeEvent" class="input-text" ngModel [(ngModel)]="typeEvent">
+            <option value="">--Please choose type of event--</option>
+            <option value="Debate Conference">Debate Conference</option>
+            <option value="Sport Event">Sport Event</option>
+            <option value="Show or Concert">Show or Concert</option>
+            <option value="Fundraising Event">Fundraising Event</option>
+            <option value="Workshop or Formation">Workshop or Formation</option>
+            <option value="Other">Other</option>
+        </select>
+        </div>
+      </div>
+
+      <div class="form-row-total">
+        <div class="form-row">
+          <select name="publicEvent" class="input-text" [(value)]="publicEvent" ngModel [(ngModel)]="publicEvent">
+            <option value="">--Private or Public Event--</option>
+            <option [ngValue]="false">Private</option>
+            <option [ngValue]="true">Public</option>
+        </select>
+        </div>
+        <div class="form-row">
+          <input type="text" name="association"  class="input-text" placeholder="Association" ngModel [(ngModel)]="association">
+          <!--<select name="associations" class="input-text" [(value)]="assocValue"  ngModel>
+            <option [ngValue]="null">--Association--</option>
+            <option *ngfor= "let assoctiations of association" [ngValue]="assoctiations.id">{{assoctiations.name}}</option>
+        </select>-->
+        </div>
+      </div>
+
+      <div class="form-row-last">
+        <textarea type="text" name="descriptionEvent" class="input-text" placeholder="Description Event" ngModel [(ngModel)]="descriptionEvent"></textarea>
+      </div>
+      <div class="form-row-total">
+        <div class="form-row">
+        <input  type="date" class="form-control input-round input-text"  placeholder="Choose the date of event" name="dateEvent" ngModel [ngModel]="dateEvent | date:'yyyy-MM-dd' ">
+      </div>
+      <div class="form-row">
+      <input type="file" class="input-text" id="customFile" />
+    </div>
+    </div>
+
+
+
+
+
+
+      <!--<div class="form-row-last">
+        <input type="file" class="input-text" id="customFile" />
+      </div>-->
+
+      <div class="form-row-last">
+        <input type="submit" name="register" class="register" value="Update" (click)="updateEvente(f.value)">
+      </div>
+    </form>
+  </div>
+</div>

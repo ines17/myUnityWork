@@ -1,0 +1,94 @@
+.titleRose{
+  color: #e80175;
+}
+.ratings {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  direction: rtl;
+  text-align: left;
+}
+.like {
+  position: relative;
+  line-height: 60px;
+  display: inline-block;
+  transition: color 0.2s ease;
+
+
+
+}
+.like:before{
+  content: '\1F44D';
+  width: 25px;
+  height: 25px;
+  font-size: 25px;
+  margin-right: 5px;
+  color: transparent;
+  text-shadow: 0 0 0 rgba(0, 153, 255, 0.178);
+
+}
+
+.selectedLike:before,
+.like.selectedLike ~ .like::before,
+.like.selectedLike ~ .like{
+
+color: transparent;
+text-shadow: 0 0 0 rgba(4, 0, 255, 0.986);
+
+
+}
+.star, .starOne {
+  position: relative;
+  line-height: 60px;
+  display: inline-block;
+  transition: color 0.2s ease;
+  color: #ebebeb;
+
+
+}
+.starOne:before{
+    content: '\2605';
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    margin-right: 5px;
+
+}
+
+.starOne.selected,
+.starOne.selected ~ .starOne{
+  transition: color 0.8s ease;
+  color: #d4af37;
+
+}
+.star:before {
+  content: '\2605';
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+  border: 1px solid black;
+
+  margin-right: 5px;
+  background-color: #3C3747;
+}
+
+.star:hover,
+.star.selected,
+.star:hover ~ .star,
+.star.selected ~ .star{
+  transition: color 0.8s ease;
+  color: #d4af37;
+
+}
+
+.btn-claim{
+  background-color: rgba(140,47,192,1);
+  color: white;
+  border-radius: 35px;
+}
+.imgFeed{
+
+  width: 100px;
+  height: 100px;
+}

@@ -1,0 +1,13 @@
+.btn-login{
+  background-color: rgba(140,47,192,1);
+  color: white;
+  border-radius: 35px;
+}
+.create{
+  color: rgba(140,47,192,1);
+}
+.input-round{
+  border-radius: 35px;
+  margin-bottom: 20px;
+  border: 1px solid #8B8AB5;
+}

@@ -1,0 +1,133 @@
+<div class="d-flex flex-row" ><ngb-carousel #carousel class="w-50 m-5"  >
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img src="./../assets/img/image1.jpg" class="w-100" alt="Random first slide">
+    </div>
+    <div class="carousel-caption">
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img src="./../assets/img/image2.jpg" class="w-100" alt="Random second slide">
+    </div>
+    <div class="carousel-caption">
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img src="./../assets/img/image3.jpg" class="w-100" alt="Random third slide">
+    </div>
+    <div class="carousel-caption">
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+<div class="w-50 ">
+<h2 class="justify-content-center"> {{event?.titleEvent}} </h2>
+<br>
+<p>{{event?.descriptionEvent}}</p>
+<br>
+<h4>{{event?.dateEvent | date:'longDate'}}</h4>
+</div>
+</div>
+
+<div class="ml-5 mr-5 mb-5">
+  <h2>Comments </h2>
+  <section class="content-item" id="comments">
+    <div class="container">
+    	<div class="row">
+            <div class="col-sm-8">
+                <form #f=ngForm>
+                	<h3 class="pull-left">New Comment</h3>
+
+                    <fieldset>
+                        <div class="row">
+                            <!-- <div class="col-sm-3 col-lg-2 hidden-xs">
+                            	<img class="img-responsive" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                            </div> -->
+                            <div class="form-group col-xs-12 col-sm-9 col-lg-10">
+                                <textarea class="form-control" name="description" placeholder="Your message"  ngModel #description="ngModel"></textarea>
+                                <button type="submit" class="btn btn-normal pull-right" (click)=addcomments(f.value.description)>Submit</button>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                </form>
+
+                <h3> Comments</h3>
+
+                <!-- COMMENT 1 - START -->
+                <div *ngFor="let comments of comment">
+                <app-comment [comment]="comments"></app-comment>
+              </div>
+                <!-- COMMENT 1 - END -->
+
+                <!-- COMMENT 2 - START -->
+                <div class="media">
+                    <a class="pull-left" href="#"><img class="media-object" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt=""></a>
+                    <div class="media-body">
+                        <h4 class="media-heading">John Doe</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <ul class="list-unstyled list-inline media-detail pull-left">
+                            <li><i class="fa fa-calendar"></i>27/02/2014</li>
+                            <li><i class="fa fa-thumbs-up"></i>13</li>
+                        </ul>
+                        <ul class="list-unstyled list-inline media-detail pull-right">
+                            <li class=""><a href="">Like</a></li>
+                            <li class=""><a href="">Reply</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- COMMENT 2 - END -->
+
+                <!-- COMMENT 3 - START -->
+                <div class="media">
+                    <a class="pull-left" href="#"><img class="media-object" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""></a>
+                    <div class="media-body">
+                        <h4 class="media-heading">John Doe</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <ul class="list-unstyled list-inline media-detail pull-left">
+                            <li><i class="fa fa-calendar"></i>27/02/2014</li>
+                            <li><i class="fa fa-thumbs-up"></i>13</li>
+                        </ul>
+                        <ul class="list-unstyled list-inline media-detail pull-right">
+                            <li class=""><a href="">Like</a></li>
+                            <li class=""><a href="">Reply</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- COMMENT 3 - END -->
+
+                <!-- COMMENT 4 - START -->
+                <div class="media">
+                    <a class="pull-left" href="#"><img class="media-object" src="https://bootdey.com/img/Content/avatar/avatar4.png" alt=""></a>
+                    <div class="media-body">
+                        <h4 class="media-heading">John Doe</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <ul class="list-unstyled list-inline media-detail pull-left">
+                            <li><i class="fa fa-calendar"></i>27/02/2014</li>
+                            <li><i class="fa fa-thumbs-up"></i>13</li>
+                        </ul>
+                        <ul class="list-unstyled list-inline media-detail pull-right">
+                            <li class=""><a href="">Like</a></li>
+                            <li class=""><a href="">Reply</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- COMMENT 4 - END -->
+
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+
+
+
+
+

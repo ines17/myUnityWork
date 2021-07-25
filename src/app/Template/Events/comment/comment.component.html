@@ -1,0 +1,15 @@
+<div class="media">
+  <a class="pull-left" href="#"><img class="media-object" height="75px" width="75px" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""></a>
+  <div class="media-body ml-4">
+      <h4 class="media-heading">{{comment.idUser.firstname}} {{comment.idUser.lastname}} </h4>
+      <p>{{comment.description}}</p>
+      <ul class="list-unstyled list-inline media-detail pull-left p-2">
+          <li><i class="fa fa-calendar p-2 text-secondary font-weight-bold"></i>{{comment.date |date:'longDate'}}</li>
+          <li><i class="fa fa-thumbs-up p-2 text-secondary font-weight-bold"></i>13</li>
+      </ul>
+      <ul class="list-unstyled list-inline media-detail pull-right">
+          <li class="font-weight-bold"><a href="">Like</a></li>
+          <li class="font-weight-bold"><a href="">Reply</a></li>
+      </ul>
+  </div>
+</div>
